@@ -26,6 +26,7 @@ import (
 	"github.com/google/gopacket/tcpassembly/tcpreader"
 	"github.com/pingcap/kvproto/pkg/coprocessor"
 	"github.com/pingcap/kvproto/pkg/kvrpcpb"
+	"github.com/pingcap/kvproto/pkg/tikvpb"
 	"github.com/pingcap/kvproto/pkg/pdpb"
 	"github.com/pingcap/kvproto/pkg/raft_serverpb"
 
@@ -408,6 +409,8 @@ func init() {
 		"/tikvpb.Tikv/KvGet":              {new(kvrpcpb.GetRequest), new(kvrpcpb.GetResponse)},
 		"/tikvpb.Tikv/KvScan":             {new(kvrpcpb.ScanRequest), new(kvrpcpb.ScanResponse)},
 		"/tikvpb.Tikv/KvPrewrite":         {new(kvrpcpb.PrewriteRequest), new(kvrpcpb.PrewriteResponse)},
+		"/tikvpb.Tikv/KvPessimisticLock":  {new(kvrpcpb.PessimisticLockRequest), new(kvrpcpb.PessimisticLockResponse)},
+		"/tikvpb.Tikv/KVPessimisticRollback": {new(kvrpcpb.PessimisticRollbackRequest), new(kvrpcpb.PessimisticRollbackResponse)},
 		"/tikvpb.Tikv/KvCommit":           {new(kvrpcpb.CommitRequest), new(kvrpcpb.CommitResponse)},
 		"/tikvpb.Tikv/KvImport":           {new(kvrpcpb.ImportRequest), new(kvrpcpb.ImportResponse)},
 		"/tikvpb.Tikv/KvCleanup":          {new(kvrpcpb.CleanupRequest), new(kvrpcpb.CleanupResponse)},
@@ -434,6 +437,7 @@ func init() {
 		"/tikvpb.Tikv/SplitRegion ":       {new(kvrpcpb.SplitRegionRequest), new(kvrpcpb.SplitRegionResponse)},
 		"/tikvpb.Tikv/MvccGetByKey":       {new(kvrpcpb.MvccGetByKeyRequest), new(kvrpcpb.MvccGetByKeyResponse)},
 		"/tikvpb.Tikv/MvccGetByStartTs":   {new(kvrpcpb.MvccGetByStartTsRequest), new(kvrpcpb.MvccGetByStartTsResponse)},
+		"/tikvpb.Tikv/BatchCommandsRequest": {new(tikvpb.BatchCommandsRequest), new(tikvpb.BatchCommandsResponse)},
 
 		"/etcdserverpb.KV/Range":       {new(etcdserverpb.RangeRequest), new(etcdserverpb.RangeResponse)},
 		"/etcdserverpb.KV/Put":         {new(etcdserverpb.PutRequest), new(etcdserverpb.PutResponse)},

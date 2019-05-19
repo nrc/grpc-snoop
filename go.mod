@@ -7,7 +7,7 @@ require (
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/google/gopacket v1.1.17
 	github.com/mdlayher/raw v0.0.0-20181016155347-fa5ef3332ca9 // indirect
-	github.com/pingcap/kvproto v0.0.0-20181224100128-c884c24ef88d
+	github.com/pingcap/kvproto v0.0.0-20190517030054-ff2e03f6fdfe
 	go.etcd.io/etcd v3.3.13+incompatible
 	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
 )
